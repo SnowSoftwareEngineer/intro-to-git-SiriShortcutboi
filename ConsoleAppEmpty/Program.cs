@@ -2,8 +2,9 @@
 using GameEnums;
 
 public class Program
-{
-    static int difficultyLevel = 1;    //global variable
+{//global variables
+    static string userInput = "default-string"; 
+    static int difficultyLevel = 1;
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Mr. Jensen");
@@ -12,7 +13,9 @@ public class Program
         Console.WriteLine("Choose your difficulty!");
         //this is me typing to appease my little nephew because he loves to watch me type on the computer 
         //more typing 
-        switch ((GameDifficulty)difficultyLevel)
+       userInput = Console.ReadLine();
+       if (int.TryParse(userInput, out difficultyLevel)){       
+         switch ((GameDifficulty)difficultyLevel)
         {
             case GameDifficulty.Easy:
                 Console.WriteLine("You have selected Easy mode");
@@ -28,6 +31,8 @@ public class Program
             
         }//make a switch on the weekday Enum and select based on the Int value of 
         // the variable called weekdaying
+        }
+
     }
 }
 
