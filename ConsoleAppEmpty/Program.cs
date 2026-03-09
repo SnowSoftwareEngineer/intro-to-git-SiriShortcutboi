@@ -2,7 +2,7 @@
 using GameEnums;
 
 public class Program
-{//global variables
+{
     static string userInput = "default-string"; 
     static int difficultyLevel = 1;
     static void Main(string[] args)
@@ -11,26 +11,23 @@ public class Program
         Console.WriteLine("I wrote another writeline from home/Mac");
 
         Console.WriteLine("Choose your difficulty!");
-        //this is me typing to appease my little nephew because he loves to watch me type on the computer 
-        //more typing 
-       userInput = Console.ReadLine();
-       if (int.TryParse(userInput, out difficultyLevel)){       
-         switch ((GameDifficulty)difficultyLevel)
-        {
-            case GameDifficulty.Easy:
-                Console.WriteLine("You have selected Easy mode");
-                break;
-            case GameDifficulty.Medium:
-                Console.WriteLine("You have selected Medium mode");
-                break;
-            case GameDifficulty.Hard:
-                Console.WriteLine("So you have chosen, HARD MODE");
-                break;
 
-            
-            
-        }//make a switch on the weekday Enum and select based on the Int value of 
-        // the variable called weekdaying
+        var userInput = Console.ReadLine();
+        if (int.TryParse(userInput, out difficultyLevel))
+        {
+            switch ((GameDifficulty)difficultyLevel)
+            {
+                case GameDifficulty.Easy:
+                    Console.WriteLine("You have selected Easy mode");
+                    break;
+                case GameDifficulty.Medium:
+                    Console.WriteLine("You have selected Medium mode");
+                    break;
+                case GameDifficulty.Hard:
+                    Console.WriteLine("So you have chosen, HARD MODE");
+                    break;
+            }//make a switch on the weekday Enum and select based on the Int value of 
+            // the variable called weekdaying
         }
 
     }
